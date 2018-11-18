@@ -5,8 +5,10 @@ PROGS:= watchme
 .PHONY: all
 all: $(PROGS)
 
-$(PROGS) : LDFLAGS+= -g -lfam
+$(PROGS) : LDFLAGS+= -g -lstdc++ -lfam
 $(PROGS) : CXXFLAGS+=
+
+$(PROGS) : %: %.o $(PROGS:=.o)
 
 .PHONY: clean
 clean:
