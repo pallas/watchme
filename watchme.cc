@@ -20,7 +20,7 @@
 
 struct FAMCloser {
     FAMCloser(FAMConnection & fc) : fc(fc) { }
-    ~FAMCloser() { TRY(FAMClose, &fc); }
+    ~FAMCloser() noexcept(false) { TRY(FAMClose, &fc); }
     FAMConnection & fc;
 };
 
