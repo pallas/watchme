@@ -9,7 +9,7 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 project(WatchMe)
-add_executable(watchme watchme.cc)
+add_executable(watchme watchme.c)
 find_library(FAM_LIBRARY fam)
 if(FAM_LIBRARY)
 	target_link_libraries(watchme PUBLIC ${FAM_LIBRARY})
